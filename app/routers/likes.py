@@ -38,7 +38,7 @@ def like(like: schemas.like, db: Session = Depends(database.get_db), current_use
         like_query.delete(synchronize_session=False)
         db.commit()
         
-        return Response(status_code=status.HTTP_204_NO_CONTENT)
+        return Response(status_code=status.HTTP_201_CREATED)
 
 
 

@@ -1,0 +1,14 @@
+[Unit]
+Description= demo Talkpad application
+After=network.target #this is going to tell ubuntu when to start the service
+
+[Service]
+User=mabra
+Group=mabra
+WorkingDirectory=/home/mabra/app/src
+Environment="PATH=/home/mabra/app/venv/bin"
+ExecStart=/home/mabra/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+EnvironmentFile=/home/mabra/.env
+
+[Install]
+WantedBy=multi.user.target
