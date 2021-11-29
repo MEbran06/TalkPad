@@ -27,7 +27,7 @@ app.include_router(likes.router)
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to my app!"}
+    return {"message": "Welcome to my app succesfully deplyed from CI/CD pipeline"}
 
 
 
