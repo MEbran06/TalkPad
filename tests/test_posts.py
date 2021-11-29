@@ -69,7 +69,7 @@ def test_delete_post_success(authorized_client, test_user, test_posts):
     res = authorized_client.delete(
         f"/posts/{test_posts[0].id}") 
 
-    assert res.status_code == 201 #changed this one from 204
+    assert res.status_code == 204
 
 def test_delete_post_non_exist(authorized_client, test_user, test_posts):
     res = authorized_client.delete(
