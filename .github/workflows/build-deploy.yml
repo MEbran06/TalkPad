@@ -84,7 +84,7 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12 
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_API_NAME}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
 
       - name: deploy to ubuntu server
@@ -96,4 +96,4 @@ jobs:
           script: |
             cd app/src
             git pull
-            echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart api
+            echo ${{secrets.PROD_PASSWORD}} | sudo -S systemctl restart social-media-talkpad
