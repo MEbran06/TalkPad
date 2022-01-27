@@ -1,3 +1,4 @@
+from sys import prefix
 from fastapi import FastAPI
 from . import models
 from .database import engine
@@ -7,7 +8,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 #models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI()
+app = FastAPI(
+    prefix = ['/posts']
+)
 
 #MUST CHANGE * LATER ON!!
 origins = ["*"]
